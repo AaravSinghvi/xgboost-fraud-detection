@@ -1,12 +1,10 @@
 # Credit Card Fraud Detection with XGBoost and Decision Trees
 
-**Six model configurations. One rare-event classification problem. A study of the tradeoff between catching fraud and raising false alarms.**
-
 Python · XGBoost · scikit-learn · imbalanced-learn · pandas · Seaborn
 
 I compared XGBoost and decision-tree classifiers on **284,807 credit-card transactions**, including **492 fraudulent transactions**. For each algorithm, I evaluated the original class distribution, random oversampling, and random undersampling. My research examines how the preferred model changes when evaluation prioritizes balanced precision and recall versus catching as many fraudulent transactions as possible.
 
-**Author:** Aarav Singhvi. The accompanying paper identifies *Journal of Student Research, High School Edition, Volume 13, Issue 4 (2024)* and acknowledges mentorship from Matan Gans.
+**Author:** Aarav Singhvi. The accompanying paper recognizes publication process with *Journal of Student Research, High School Edition, Volume 13, Issue 4 (2024)* and acknowledges mentorship from Matan Gans.
 
 [Read the paper](paper/fraud-detection-paper.pdf) · [Explore the notebook](fraud_detection.ipynb) · [Data source](DATA.md) · [Methods and reproducibility](METHODS-NOTES.md)
 
@@ -19,25 +17,17 @@ The paper reports two distinct outcomes:
 
 The tradeoff is concrete: undersampling caught **10 additional fraudulent transactions** while adding **2,677 false alarms** compared with the original-distribution XGBoost model. The study did not measure operational review costs, customer friction, or financial savings, so this preference should not be interpreted as a demonstrated production optimum.
 
-**Accuracy alone hides the problem:** only about 0.173% of the full dataset is fraudulent. Predicting every transaction as legitimate would achieve about 99.83% accuracy while detecting no fraud.
+**Accuracy alone hides the problem.** Since only about 0.173% of the full dataset is fraudulent, predicting every transaction as legitimate would achieve about 99.83% accuracy while detecting no fraud.
 
 ## Paper results and saved notebook results
 
-The supplied files record **different experiments**. The paper's matrices contain 78 fraudulent test cases; the notebook's saved run contains 97. The notebook uses an unseeded random train/test split and unseeded samplers, which can produce different results across executions. The exact cause of the mismatch cannot be established from the files alone.
-
-For example, the saved notebook's original-distribution XGBoost has **86.34% F1, 91.86% precision, and 81.44% recall**, distinct from the paper's values above. Its undersampled XGBoost records **95.88% recall and 3.42% precision**.
+The supplied files record **different experiments**. The paper's matrices contain 78 fraudulent test cases; the notebook's saved run contains 97. The notebook uses an unseeded random train/test split and unseeded samplers, which can produce different results across executions.
 
 The repository keeps both sources explicit:
 
 - [Paper metrics](results/paper_metrics.json): Tables 1–2 and Figures 13–18, page 10.
 - [Notebook metrics](results/notebook_metrics.json): saved outputs in the supplied notebook.
-
-Neither set of metrics is presented as a fresh reproduction. An additional mismatch between the paper's undersampled decision-tree table and figure is documented in [the methods notes](METHODS-NOTES.md); both versions are preserved.
-
-![Original-distribution XGBoost confusion matrix from the saved notebook run](assets/xgboost_original_confusion.png)
-
-*Saved notebook run: this figure corresponds to the notebook metrics, not the paper's test split.*
-
+  
 ## What I investigated
 
 1. **Data exploration:** schema, missing values, transaction amounts and timing, and severe class imbalance.
@@ -76,8 +66,6 @@ The original package versions were not recorded. `requirements.txt` lists depend
 - The dataset spans two days. These results do not establish performance under changing fraud patterns, across institutions, or on unseen cardholders.
 - Oversampling changes class prevalence; model scores should not be assumed to be calibrated fraud probabilities.
 
-## Repository provenance
+## Other Attributes
 
 The PDF is included unchanged. `fraud_detection.ipynb` is a presentation copy of `Data_Preprocessing.ipynb`: it adds explanations, makes loading portable, and disables oversized optional tree diagrams. Original statistical training/evaluation cells and their saved metric outputs are retained. The source files in Downloads are unchanged.
-
-Only one file in this repository is named `README.md`. When uploading to GitHub, keep the `assets`, `data`, `paper`, and `results` folders intact.
