@@ -1,0 +1,55 @@
+{
+  "source": "saved outputs in supplied Data_Preprocessing.ipynb; not rerun",
+  "test_rows": 56962,
+  "test_positive_count": 97,
+  "metrics": [
+    {
+      "accuracy": 0.9990344440153085,
+      "f1": 0.7236180904522612,
+      "recall": 0.7422680412371134,
+      "precision": 0.7058823529411765,
+      "hard_label_auc": 0.8708702379754547,
+      "configuration": "decision_tree_original"
+    },
+    {
+      "accuracy": 0.9995611109160493,
+      "f1": 0.8633879781420764,
+      "recall": 0.8144329896907216,
+      "precision": 0.9186046511627907,
+      "hard_label_auc": 0.9071549455619704,
+      "configuration": "xgboost_original"
+    },
+    {
+      "accuracy": 0.9991397773954567,
+      "f1": 0.7379679144385027,
+      "recall": 0.711340206185567,
+      "precision": 0.7666666666666667,
+      "hard_label_auc": 0.8554854552426121,
+      "configuration": "decision_tree_oversampled"
+    },
+    {
+      "accuracy": 0.9995786664794073,
+      "f1": 0.8723404255319148,
+      "recall": 0.845360824742268,
+      "precision": 0.9010989010989011,
+      "hard_label_auc": 0.9226012775782034,
+      "configuration": "xgboost_oversampled"
+    },
+    {
+      "accuracy": 0.8877497278887679,
+      "f1": 0.028267477203647418,
+      "recall": 0.9587628865979382,
+      "precision": 0.014345210550670985,
+      "hard_label_auc": 0.9231957403182253,
+      "configuration": "decision_tree_undersampled"
+    },
+    {
+      "accuracy": 0.953828868368386,
+      "f1": 0.06605113636363637,
+      "recall": 0.9587628865979382,
+      "precision": 0.03420375137918352,
+      "hard_label_auc": 0.9562916692727668,
+      "configuration": "xgboost_undersampled"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "source": "supplied paper, page 10, Tables 1\u20132 and Figures 13\u201318; rounded published values, not a new run",
+  "test_rows": 56962,
+  "test_positive_count": 78,
+  "metrics": [
+    {
+      "configuration": "decision_tree_original",
+      "accuracy": 0.9994,
+      "precision": 0.775,
+      "f1": 0.78481,
+      "recall": 0.79487,
+      "confusion": {
+        "tn": 56866,
+        "fp": 18,
+        "fn": 16,
+        "tp": 62
+      },
+      "recomputed_from_figure_counts": {
+        "accuracy": 0.999403110845827,
+        "precision": 0.775,
+        "recall": 0.7948717948717948,
+        "f1": 0.7848101265822784
+      }
+    },
+    {
+      "configuration": "decision_tree_oversampled",
+      "accuracy": 0.99919,
+      "precision": 0.68181,
+      "f1": 0.72289,
+      "recall": 0.76923,
+      "confusion": {
+        "tn": 56856,
+        "fp": 28,
+        "fn": 18,
+        "tp": 60
+      },
+      "recomputed_from_figure_counts": {
+        "accuracy": 0.9991924440855307,
+        "precision": 0.6818181818181818,
+        "recall": 0.7692307692307693,
+        "f1": 0.7228915662650602
+      }
+    },
+    {
+      "configuration": "decision_tree_undersampled",
+      "accuracy": 0.89844,
+      "precision": 0.01297,
+      "f1": 0.0256,
+      "recall": 0.97435,
+      "confusion": {
+        "tn": 51064,
+        "fp": 5820,
+        "fn": 2,
+        "tp": 76
+      },
+      "recomputed_from_figure_counts": {
+        "accuracy": 0.89779151012956,
+        "precision": 0.012890094979647219,
+        "recall": 0.9743589743589743,
+        "f1": 0.025443588885169066
+      }
+    },
+    {
+      "configuration": "xgboost_original",
+      "accuracy": 0.9997,
+      "precision": 0.94202,
+      "f1": 0.88435,
+      "recall": 0.83333,
+      "confusion": {
+        "tn": 56880,
+        "fp": 4,
+        "fn": 13,
+        "tp": 65
+      },
+      "recomputed_from_figure_counts": {
+        "accuracy": 0.9997015554229135,
+        "precision": 0.9420289855072463,
+        "recall": 0.8333333333333334,
+        "f1": 0.8843537414965986
+      }
+    },
+    {
+      "configuration": "xgboost_oversampled",
+      "accuracy": 0.99968,
+      "precision": 0.9054,
+      "f1": 0.88157,
+      "recall": 0.85897,
+      "confusion": {
+        "tn": 56877,
+        "fp": 7,
+        "fn": 11,
+        "tp": 67
+      },
+      "recomputed_from_figure_counts": {
+        "accuracy": 0.9996839998595555,
+        "precision": 0.9054054054054054,
+        "recall": 0.8589743589743589,
+        "f1": 0.881578947368421
+      }
+    },
+    {
+      "configuration": "xgboost_undersampled",
+      "accuracy": 0.95288,
+      "precision": 0.02721,
+      "f1": 0.05292,
+      "recall": 0.96153,
+      "confusion": {
+        "tn": 54203,
+        "fp": 2681,
+        "fn": 3,
+        "tp": 75
+      },
+      "recomputed_from_figure_counts": {
+        "accuracy": 0.9528808679470524,
+        "precision": 0.027213352685050797,
+        "recall": 0.9615384615384616,
+        "f1": 0.0529287226534933
+      }
+    }
+  ],
+  "internal_discrepancies": [
+    {
+      "configuration": "decision_tree_undersampled",
+      "fields": [
+        "accuracy",
+        "precision",
+        "f1"
+      ],
+      "note": "Table values disagree with the corresponding figure counts beyond rounding tolerance; both sources retained."
+    }
+  ]
+}
